@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Basket from "./Components/Basket/Basket";
+import Card from "./Components/Card/Card";
+import Header from "./Components/Header/Header";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="wrapper">
+      <Basket />
+      <Header />
+      <div className="content">
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            marginBottom: "40px",
+          }}>
+          <h1>ALL</h1>
+          <div className="search__block">
+            <img src="/media/search.svg" alt="search" />
+            <input placeholder="Search..." />
+          </div>
+        </div>
+        <div className="sneackers">
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+        </div>
+      </div>
     </div>
   );
-}
+};
 
 export default App;
